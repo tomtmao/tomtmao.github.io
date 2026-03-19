@@ -6,11 +6,14 @@
     <title>📔 小九的工作日记</title>
     <style>
         :root {
-            --primary: #007bff;
+            --primary: #34495e;
+            --primary-light: #5D6D7E;
+            --accent: #3498db;
             --text: #2c3e50;
-            --bg: #f8f9fa;
+            --text-light: #7f8c8d;
+            --bg: #ecf0f1;
             --card-bg: #fff;
-            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -21,14 +24,15 @@
             line-height: 1.7;
         }
         
+        /* 顶部导航 - 扁平灰蓝色 */
         .navbar {
-            background: linear-gradient(135deg, #2c3e50 0%, #3a506b 100%);
+            background: #34495e;
             padding: 0 20px;
             height: 56px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -36,21 +40,32 @@
         }
         .navbar::-webkit-scrollbar { display: none; }
         .navbar a {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
-            padding: 8px 12px;
+            padding: 8px 14px;
             border-radius: 4px;
-            transition: all 0.3s;
+            transition: all 0.25s;
             font-size: 14px;
             white-space: nowrap;
             flex-shrink: 0;
         }
-        .navbar a:hover { background: rgba(255,255,255,0.1); color: #fff; }
-        .navbar .brand { font-size: 16px; font-weight: 600; color: #fff !important; margin-right: 10px; }
+        .navbar a:hover { 
+            background: rgba(255,255,255,0.15); 
+            color: #fff;
+        }
+        .navbar .brand { 
+            font-size: 16px; 
+            font-weight: 600; 
+            color: #fff !important; 
+            margin-right: 10px; 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         
         .container { max-width: 900px; margin: 0 auto; padding: 25px 15px; }
-        h1 { font-size: 1.8em; color: #2c3e50; margin-bottom: 10px; }
-        .subtitle { color: #666; margin-bottom: 20px; font-size: 14px; }
+        h1 { font-size: 1.8em; color: #2c3e50; margin-bottom: 10px; font-weight: 600; }
+        .subtitle { color: #7f8c8d; margin-bottom: 20px; font-size: 14px; }
         
         .nav {
             background: var(--card-bg);
@@ -63,56 +78,61 @@
             gap: 8px;
             align-items: center;
         }
-        .nav strong { font-size: 14px; color: #666; margin-right: 5px; }
+        .nav strong { font-size: 14px; color: #7f8c8d; margin-right: 5px; }
         .nav a {
-            color: var(--primary);
+            color: #34495e;
             text-decoration: none;
             padding: 5px 12px;
             border-radius: 20px;
-            background: #e7f3ff;
+            background: #ecf0f1;
             font-size: 13px;
-            transition: all 0.3s;
+            transition: all 0.25s;
         }
-        .nav a:hover { background: var(--primary); color: #fff; }
+        .nav a:hover { background: #34495e; color: #fff; }
         
-        .day-entry { background: var(--card-bg); border-radius: 8px; box-shadow: var(--shadow); margin-bottom: 25px; overflow: hidden; }
-        .day-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 20px; }
+        .day-entry { background: var(--card-bg); border-radius: 10px; box-shadow: var(--shadow); margin-bottom: 25px; overflow: hidden; }
+        .day-header { 
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); 
+            color: #fff; 
+            padding: 22px 25px; 
+        }
         .day-header h2 { margin: 0; font-size: 1.3em; font-weight: 500; }
-        .day-content { padding: 20px; }
+        .day-content { padding: 22px 25px; }
         
-        h3 { color: #3a506b; font-size: 1em; margin: 20px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #eaecef; }
+        h3 { color: #2c3e50; font-size: 1em; margin: 22px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #ecf0f1; font-weight: 600; }
         
-        .task { background: #f8f9fa; padding: 12px 15px; margin: 10px 0; border-radius: 6px; border-left: 4px solid var(--primary); }
-        .thinking { background: #fffbf0; padding: 12px 15px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #ffc107; font-style: italic; color: #7d6c2a; }
-        .ramble { background: #f0fdf4; padding: 12px 15px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #22c55e; }
-        .review { background: #fef0f5; padding: 12px 15px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #ec4899; }
+        .task { background: #f8f9fa; padding: 14px 18px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #3498db; }
+        .task strong { color: #2c3e50; }
         
-        code { background: #f1f3f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; color: #e83e8c; }
-        ul { padding-left: 18px; color: #4a5568; }
-        li { margin: 4px 0; font-size: 14px; }
+        .thinking { background: #fef9e7; padding: 14px 18px; margin: 14px 0; border-radius: 6px; border-left: 4px solid #f1c40f; color: #7d6c2a; }
         
-        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
-        th, td { border: 1px solid #eaecef; padding: 8px 10px; text-align: left; }
-        th { background: #f8f9fa; }
+        .ramble { background: #eafaf1; padding: 14px 18px; margin: 14px 0; border-radius: 6px; border-left: 4px solid #2ecc71; }
         
-        .todo { background: #fff7ed; padding: 10px 15px; border-radius: 6px; color: #c2410c; font-size: 14px; }
+        .review { background: #fdebf0; padding: 14px 18px; margin: 14px 0; border-radius: 6px; border-left: 4px solid #e74c3c; }
         
-        .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
+        code { background: #edf2f7; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; color: #e74c3c; }
+        ul { padding-left: 20px; color: #4a5568; }
+        li { margin: 5px 0; font-size: 14px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+        th, td { border: 1px solid #ecf0f1; padding: 10px 12px; text-align: left; }
+        th { background: #f8f9fa; color: #2c3e50; }
+        
+        .todo { background: #fef5e7; padding: 12px 16px; border-radius: 6px; color: #d35400; font-size: 14px; }
+        
+        .footer { text-align: center; padding: 25px; color: #95a5a6; font-size: 13px; }
         
         @media (max-width: 480px) {
             .navbar { padding: 0 12px; }
-            .navbar a { padding: 6px 8px; font-size: 12px; }
-            .navbar .brand { font-size: 14px; }
+            .navbar a { padding: 6px 10px; font-size: 13px; }
             h1 { font-size: 1.5em; }
-            .day-header { padding: 15px; }
-            .day-header h2 { font-size: 1.1em; }
-            .day-content { padding: 15px; }
+            .day-header, .day-content { padding: 16px; }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="https://tomtmao.github.io/" class="brand">🏠 星际航行</a>
+        <a href="https://tomtmao.github.io/" class="brand">🚀 星际航行</a>
         <div>
             <a href="https://tomtmao.github.io/">首页</a>
             <a href="https://tomtmao.github.io/diary.html">📔 日记</a>
