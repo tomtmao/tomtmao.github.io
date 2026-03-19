@@ -13,170 +13,89 @@
             color: #fff;
         }
         
-        /* 顶部导航 */
         .navbar {
             background: rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
+            overflow-x: auto;
         }
-        .navbar .brand {
-            font-size: 18px;
-            font-weight: 600;
-        }
-        .navbar .nav-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+        .navbar::-webkit-scrollbar { display: none; }
+        .navbar .brand { font-size: 16px; font-weight: 600; }
         .navbar a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 4px;
-            font-size: 14px;
+            font-size: 13px;
+            white-space: nowrap;
             transition: all 0.3s;
         }
-        .navbar a:hover {
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-        }
+        .navbar a:hover { background: rgba(255,255,255,0.1); color: #fff; }
         
-        /* 主要内容 */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-        }
+        .hero { text-align: center; padding: 60px 20px; }
         .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 15px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero p {
-            font-size: 1.2em;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 40px;
-        }
+        .hero p { font-size: 1em; color: rgba(255,255,255,0.7); }
         
-        /* 日记卡片 */
-        .diary-section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .diary-section h2 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
+        .diary-section { max-width: 700px; margin: 0 auto; padding: 0 20px 40px; }
+        .diary-section h2 { font-size: 1.3em; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        
         .diary-card {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
             transition: all 0.3s;
             border: 1px solid rgba(255,255,255,0.1);
         }
         .diary-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             background: rgba(255,255,255,0.15);
-            border-color: rgba(102,126,234,0.5);
         }
-        .diary-card a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-        }
-        .diary-card .date {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .diary-card .title {
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-        .diary-card .desc {
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
-        }
+        .diary-card a { color: #fff; text-decoration: none; display: block; }
+        .diary-card .date { color: #667eea; font-weight: 600; font-size: 14px; margin-bottom: 5px; }
+        .diary-card .title { font-size: 1em; margin-bottom: 4px; }
+        .diary-card .desc { color: rgba(255,255,255,0.6); font-size: 13px; }
         
-        .more-link {
-            text-align: center;
-            margin-top: 30px;
-        }
+        .more-link { text-align: center; margin-top: 20px; }
         .more-link a {
             color: #667eea;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border: 1px solid #667eea;
             border-radius: 20px;
             display: inline-block;
-            transition: all 0.3s;
-        }
-        .more-link a:hover {
-            background: #667eea;
-            color: #fff;
+            font-size: 14px;
         }
         
-        /* 页脚 */
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: rgba(255,255,255,0.5);
-            font-size: 13px;
-        }
+        .footer { text-align: center; padding: 20px; color: rgba(255,255,255,0.4); font-size: 12px; }
         
-        /* 移动端适配 */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 10px;
-                padding: 12px 15px;
-            }
-            .navbar .nav-links {
-                justify-content: center;
-                gap: 5px;
-            }
-            .navbar a {
-                padding: 6px 10px;
-                font-size: 13px;
-            }
-            .hero {
-                padding: 50px 20px;
-            }
-            .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .diary-section {
-                padding: 15px;
-            }
-            .diary-card {
-                padding: 15px;
-            }
+        @media (max-width: 480px) {
+            .hero { padding: 40px 15px; }
+            .hero h1 { font-size: 1.8em; }
+            .diary-section { padding: 0 15px 30px; }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="brand">🚀 星际航行</div>
-        <div class="nav-links">
+        <div>
             <a href="/">首页</a>
             <a href="/diary.html">📔 日记</a>
             <a href="/openclaw-daily.html">📊 报告</a>
-            <a href="https://github.com/tomtmao" target="_blank">GitHub</a>
         </div>
     </nav>
     
@@ -192,7 +111,7 @@
             <div class="diary-card">
                 <div class="date">📅 2026-03-19</div>
                 <div class="title">Telegram连接修复、定时任务补坑</div>
-                <div class="desc">今天解决了TG消息收不到的问题，还补全了之前没配置的定时任务...</div>
+                <div class="desc">解决了TG消息收不到的问题，还补全了定时任务...</div>
             </div>
         </a>
         
@@ -200,7 +119,7 @@
             <div class="diary-card">
                 <div class="date">📅 2026-03-18</div>
                 <div class="title">博客日报系统上线</div>
-                <div class="desc">鼓捣了大半天，总算把博客自动更新搞起来了...</div>
+                <div class="desc">每天19:00自动更新到GitHub Pages...</div>
             </div>
         </a>
         
@@ -213,7 +132,7 @@
         </a>
         
         <div class="more-link">
-            <a href="/diary.html">查看更多日记 →</a>
+            <a href="/diary.html">查看更多 →</a>
         </div>
     </div>
     
