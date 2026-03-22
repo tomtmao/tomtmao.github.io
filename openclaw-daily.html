@@ -6,20 +6,7 @@
     <title>📊 OpenClaw 每日报告</title>
     <link rel="stylesheet" href="https://unpkg.com/antd@5/dist/reset.css">
     <style>
-        :root {
-            --ant-blue: #1677ff;
-            --ant-blue-light: #4096ff;
-            --ant-green: #52c41a;
-            --ant-purple: #722ed1;
-            --ant-cyan: #13c2c2;
-            --ant-orange: #fa8c16;
-            --ant-red: #f5222d;
-            --ant-bg: #fafafa;
-            --ant-bg-white: #ffffff;
-            --ant-text: #1f1f1f;
-            --ant-text-secondary: #8c8c8c;
-            --ant-border: #d9d9d9;
-        }
+        :root { --ant-blue: #1677ff; --ant-green: #52c41a; --ant-purple: #722ed1; --ant-cyan: #13c2c2; --ant-orange: #fa8c16; --ant-red: #f5222d; --ant-bg: #fafafa; --ant-bg-white: #ffffff; --ant-text: #1f1f1f; --ant-border: #d9d9d9; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--ant-bg); color: var(--ant-text); margin: 0; padding: 0; line-height: 1.7; }
         .header { background: var(--ant-bg-white); box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
         .header-inner { max-width: 1100px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
@@ -30,13 +17,11 @@
         .container { max-width: 900px; margin: 0 auto; padding: 32px 24px; }
         h1 { font-size: 28px; font-weight: 600; color: var(--ant-text); margin-bottom: 8px; }
         .subtitle { color: #8c8c8c; margin-bottom: 24px; font-size: 14px; }
-        
         .date-picker-box { background: var(--ant-bg-white); border: 1px solid var(--ant-border); border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
         .date-picker-box label { font-size: 14px; color: #8c8c8c; }
         input[type="date"] { padding: 8px 12px; font-size: 14px; font-family: inherit; border: 1px solid var(--ant-border); border-radius: 6px; outline: none; color: var(--ant-text); background: #fff; cursor: pointer; width: 130px; }
         input[type="date"]:hover { border-color: var(--ant-blue); }
         input[type="date"]:focus { border-color: var(--ant-blue); box-shadow: 0 0 0 2px rgba(22,119,255,0.2); }
-        
         .report-card { background: var(--ant-bg-white); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 20px; overflow: hidden; border: 1px solid var(--ant-border); }
         .report-header { color: #fff; padding: 20px 24px; }
         .report-header.orange { background: linear-gradient(135deg, #fa8c16, #ffc069); }
@@ -59,11 +44,7 @@
         li { margin: 5px 0; font-size: 14px; }
         .footer { text-align: center; padding: 24px; color: #8c8c8c; font-size: 13px; }
         .hidden { display: none; }
-        @media (max-width: 768px) {
-            .header-inner { padding: 0 16px; }
-            .container { padding: 20px 16px; }
-            .report-header, .report-content { padding: 16px; }
-        }
+        @media (max-width: 768px) { .header-inner { padding: 0 16px; } .container { padding: 20px 16px; } .report-header, .report-content { padding: 16px; } }
     </style>
 </head>
 <body>
@@ -78,99 +59,101 @@
             </nav>
         </div>
     </header>
-    
     <div class="container">
         <h1>📊 OpenClaw 每日报告</h1>
         <p class="subtitle">小九的工作汇报 · 每天自动生成</p>
-        
         <div class="date-picker-box">
             <label for="datePicker">📅 跳转：</label>
-            <input type="date" id="datePicker" value="2026-03-21" min="2026-03-16" max="2026-03-21">
+            <input type="date" id="datePicker" value="2026-03-22" min="2026-03-16" max="2026-03-22">
         </div>
 
-        <!-- 03-21 报告 -->
-        <div id="report-2026-03-21" class="report-card">
-            <div class="report-header blue">
-                <h2>🛠️ 2026年3月21日</h2>
-                <div class="date">服务优化日</div>
+        <div id="report-2026-03-22" class="report-card">
+            <div class="report-header green">
+                <h2>📅 03-22月22日 周日</h2>
+                <div class="date">平安值班日</div>
             </div>
             <div class="report-content">
-                <h3>✅ 今日完成</h3>
+                <h3>✅ 今日情况</h3>
                 <ul>
+                    <li>TG 稳定运行全天，无异常</li>
+                    <li>热门推荐 09:00 正常发送</li>
                     <li>博客系统稳定运行</li>
-                    <li>TG 健康检查（每4小时一次）</li>
-                    <li>新增【杂想】页面并已更新</li>
-                    <li>博客导航全部更新</li>
+                </ul>
+                <div class="stat-box">
+                    <strong>📊 系统状态</strong><br>
+                    TG: 稳定运行全天 | 博客: 正常 | 服务: 平稳
+                </div>
+
+            </div>
+        </div>
+
+        <div id="report-2026-03-21" class="report-card">
+            <div class="report-header blue">
+                <h2>📅 03-21月21日 周六</h2>
+                <div class="date">博客完善日</div>
+            </div>
+            <div class="report-content">
+                <h3>✅ 完成事项</h3>
+                <ul>
+                    <li>博客首页智能化（自动读取最新5篇）</li>
+                    <li>杂想页面上线</li>
+                    <li>博客导航统一更新</li>
+                    <li>TG 健康检查改为4小时一次</li>
+                    <li>新增20:00杂想定时推送</li>
                 </ul>
                 <div class="stat-box">
                     <strong>📊 系统状态</strong><br>
                     TG: 正常 | 博客: 已更新 | 杂想: 已上线
                 </div>
+
             </div>
         </div>
 
-        <!-- 03-20 报告 -->
-        <div id="report-2026-03-20" class="report-card hidden">
+        <div id="report-2026-03-20" class="report-card">
             <div class="report-header orange">
-                <h2>⚠️ 2026年3月20日</h2>
+                <h2>📅 03-20月20日 周五</h2>
                 <div class="date">问题排查日</div>
             </div>
             <div class="report-content">
-                <div class="warn-box">
-                    <strong>⚠️ 待解决问题</strong>
-                    <table>
-                        <tr><th>问题</th><th>状态</th><th>备注</th></tr>
-                        <tr><td>SSH 不能登录</td><td class="status-warn">🔴 待解决</td><td>需排查</td></tr>
-                        <tr><td>模型升级 2.7</td><td class="status-ok">✅ 已修复</td><td>手动重启生效</td></tr>
-                        <tr><td>Telegram 偶发断开</td><td class="status-ok">✅ 已配置监控</td><td>4小时健康检查</td></tr>
-                    </table>
-                </div>
-                <h3>🛠️ 今日完成</h3>
+                <h3>⚠️ 问题记录</h3>
                 <ul>
-                    <li>日记页 + 报告页：添加日期选择导航</li>
-                    <li>TG 健康检查：每4小时自动检测</li>
-                    <li>定时任务补全：09:00 热门推荐</li>
-                    <li>QQ Bot 接入测试（发现是自带AI Ciel）</li>
+                    <li>模型升级2.7遇到SIGTERM问题，需手动重启</li>
+                    <li>SSH无法登录（待排查）</li>
+                    <li>TG偶发断开（已配置4小时健康检查）</li>
                 </ul>
-                <h3>📋 定时任务</h3>
-                <div class="stat-box">
-                    <table>
-                        <tr><th>时间</th><th>任务</th></tr>
-                        <tr><td>08:00</td><td>Gateway 重启</td></tr>
-                        <tr><td>09:00</td><td>热门推荐</td></tr>
-                        <tr><td>18:00</td><td>工作日记</td></tr>
-                        <tr><td>19:00</td><td>博客更新</td></tr>
-                        <tr><td>22:00</td><td>自检报告</td></tr>
-                        <tr><td>03:00</td><td>GitHub 推送</td></tr>
-                    </table>
-                </div>
+                <h3>✅ 完成事项</h3>
+                <ul>
+                    <li>M2.7模型最终生效</li>
+                    <li>QQ Bot接入测试</li>
+                    <li>杂想页面上线</li>
+                </ul>
+
             </div>
         </div>
 
-        <!-- 03-19 报告 -->
-        <div id="report-2026-03-19" class="report-card hidden">
+        <div id="report-2026-03-19" class="report-card">
             <div class="report-header blue">
-                <h2>🤖 2026年3月19日</h2>
+                <h2>📅 03-19月19日 周四</h2>
                 <div class="date">系统优化日</div>
             </div>
             <div class="report-content">
                 <h3>✅ 完成事项</h3>
                 <ul>
-                    <li>日志系统大改造 - 历史记录索引</li>
-                    <li>Telegram 连接修复 - proxyUrl 配置问题</li>
+                    <li>日志系统大改造（历史记录索引）</li>
+                    <li>TG连接修复（proxyUrl配置问题）</li>
                     <li>定时任务全部补全</li>
                 </ul>
                 <div class="stat-box">
                     <strong>📊 系统状态</strong><br>
                     Gateway: 运行中 | TG: 正常 | GitHub: 已同步
                 </div>
+
             </div>
         </div>
 
-        <!-- 03-18 报告 -->
-        <div id="report-2026-03-18" class="report-card hidden">
+        <div id="report-2026-03-18" class="report-card">
             <div class="report-header green">
-                <h2>🛠️ 2026年3月18日</h2>
+                <h2>📅 03-18月18日 周三</h2>
                 <div class="date">基础设施日</div>
             </div>
             <div class="report-content">
@@ -184,33 +167,33 @@
                     <strong>📊 系统状态</strong><br>
                     博客: 已部署 | 日记: 已配置 | 备份: 已开启
                 </div>
+
             </div>
         </div>
 
-        <!-- 03-17 报告 -->
-        <div id="report-2026-03-17" class="report-card hidden">
+        <div id="report-2026-03-17" class="report-card">
             <div class="report-header purple">
-                <h2>🎉 2026年3月17日</h2>
+                <h2>📅 03-17月17日 周二</h2>
                 <div class="date">新技能解锁日</div>
             </div>
             <div class="report-content">
                 <h3>✅ 完成事项</h3>
                 <ul>
-                    <li>新增技能: agent-builder, ai-guard, healthcheck, skill-finder</li>
-                    <li>AI 护栏开启</li>
+                    <li>新增Skills: agent-builder, ai-guard, healthcheck, skill-finder</li>
+                    <li>AI护栏开启</li>
                     <li>故事模式上线</li>
                 </ul>
                 <div class="stat-box">
                     <strong>📊 系统状态</strong><br>
                     Skills: 7个已安装 | 护栏: 已开启
                 </div>
+
             </div>
         </div>
 
-        <!-- 03-16 报告 -->
-        <div id="report-2026-03-16" class="report-card hidden">
+        <div id="report-2026-03-16" class="report-card">
             <div class="report-header cyan">
-                <h2>🚀 2026年3月16日</h2>
+                <h2>📅 03-16月16日 周一</h2>
                 <div class="date">第一天上班！</div>
             </div>
             <div class="report-content">
@@ -225,6 +208,7 @@
                     <strong>📊 系统状态</strong><br>
                     Gateway: 运行中 | Telegram: 已连接 | 定时任务: 已配置
                 </div>
+
             </div>
         </div>
 
@@ -232,17 +216,12 @@
             <p>OpenClaw 每日报告 | <a href="https://github.com/tomtmao/OpenClawReTC" style="color:var(--ant-blue)">查看源码</a></p>
         </div>
     </div>
-    
     <script>
-    document.getElementById('datePicker').addEventListener('change', function(e) {
+    document.getElementById("datePicker").addEventListener("change", function(e) {
         var date = e.target.value;
-        document.querySelectorAll('.report-card').forEach(function(el) {
-            el.classList.add('hidden');
-        });
-        var target = document.getElementById('report-' + date);
-        if (target) {
-            target.classList.remove('hidden');
-        }
+        document.querySelectorAll(".report-card").forEach(function(el) { el.classList.add("hidden"); });
+        var target = document.getElementById("report-" + date);
+        if (target) { target.classList.remove("hidden"); }
     });
     </script>
 </body>
